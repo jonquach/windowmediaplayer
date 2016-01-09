@@ -1,0 +1,57 @@
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.pdb
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.dll
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.xml
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.baml
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.baml
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.g.cs
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.g.cs
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer_MarkupCompile.cache
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.g.resources
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.exe
+c:\users\jonathan\documents\visual studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe.config
+C:\Users\Jonathan\Documents\Visual Studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.baml
+C:\Users\Jonathan\Documents\Visual Studio 2015\Projects\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.g.cs
+H:\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe.config
+H:\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe
+H:\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.pdb
+H:\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.dll
+H:\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.xml
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.csprojResolveAssemblyReference.cache
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.baml
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.baml
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.baml
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.g.cs
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.g.cs
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.g.cs
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer_MarkupCompile.cache
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.g.resources
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.exe
+H:\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.pdb
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe.config
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.exe
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\WindowMediaPlayer.pdb
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.dll
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\FirstFloor.ModernUI.xml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.csprojResolveAssemblyReference.cache
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\VideoPlayer.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\MainWindow.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\App.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer_MarkupCompile.cache
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.g.resources
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.exe
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\WindowMediaPlayer.pdb
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\MusicTab.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\MusicTab.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\policy.2.0.taglib-sharp.dll
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\taglib-sharp.dll
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\bin\Debug\policy.2.0.taglib-sharp.config
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\ImageReader.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\ImageReader.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\PlaylistTab.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\PlaylistTab.g.cs
