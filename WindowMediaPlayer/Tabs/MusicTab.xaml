@@ -7,11 +7,15 @@
              mc:Ignorable="d"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="312.71" d:DesignWidth="491.174">
 
     <UserControl.Resources>
         <Image x:Key="Play" Source="/Resources/play.png" Width="20" Height="20"/>
         <Image x:Key="Pause" Source="/Resources/pause.png" Width="20" Height="20"/>
+        <Image x:Key="Forward" Source="/Resources/forward.png" Width="20" Height="20"/>
+        <Image x:Key="Backward" Source="/Resources/backward.png" Width="20" Height="20"/>
+        <Image x:Key="Loop" Source="/Resources/loop.png" Width="20" Height="20"/>
+        <Image x:Key="LoopActive" Source="/Resources/loop_active.png" Width="20" Height="20"/>
     </UserControl.Resources>
 
     <Grid Style="{StaticResource ContentRoot}">
@@ -39,18 +43,27 @@
 
         <DockPanel Grid.Row="2" Width="Auto" Background="White">
             <DockPanel>
-                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click">
+                <Button x:Name="btnBackward" Background="White" Padding="6,3" Click="btnBackward_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Backward"/>
+                </Button>
+                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click" BorderThickness="0">
                     <DynamicResource ResourceKey="Play"/>
+                </Button>
+                <Button x:Name="btnForward" Background="White" Padding="6,3" Click="btnForward_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Forward"/>
                 </Button>
             </DockPanel>
 
             <DockPanel LastChildFill="True">
                 <ProgressBar x:Name="Volume" Minimum="0" Maximum="1" Value="{Binding Volume}" Width="60"/>
+                <Button x:Name="btnLoop" Background="White" Padding="6,3" Click="btnLoop_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Loop"/>
+                </Button>
             </DockPanel>
 
             <DockPanel LastChildFill="True">
-                <TextBlock x:Name="MusicTimer" DockPanel.Dock="Left">00:00</TextBlock>
-                <TextBlock x:Name="MusicFullDuration" DockPanel.Dock="Right">00:00</TextBlock>
+                <TextBlock x:Name="MusicTimer" DockPanel.Dock="Left" Foreground="Black">00:00</TextBlock>
+                <TextBlock x:Name="MusicFullDuration" DockPanel.Dock="Right" Foreground="Black">00:00</TextBlock>
                 <Slider x:Name="Slider_Music" Minimum="0" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" ValueChanged="Slider_ValueChanged" />
             </DockPanel>
         </DockPanel>

@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tabs\ModernDialog1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tabs\MusicTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +95,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="MusicLibrary.cs" />
+    <Compile Include="Playlist.cs" />
+    <Compile Include="PlaylistLib.cs" />
+    <Compile Include="Tabs\ModernDialog1.xaml.cs">
+      <DependentUpon>ModernDialog1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\PlaylistTab.xaml.cs">
       <DependentUpon>PlaylistTab.xaml</DependentUpon>
     </Compile>
@@ -121,6 +130,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\backward.png" />
+    <Resource Include="Resources\forward.png" />
+    <Resource Include="Resources\loop.png" />
+    <Resource Include="Resources\loop_active.png" />
+    <Resource Include="Resources\shuffle.png" />
+    <Resource Include="Resources\shuffle_active.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

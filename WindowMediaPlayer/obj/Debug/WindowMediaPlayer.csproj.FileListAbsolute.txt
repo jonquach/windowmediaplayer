@@ -55,3 +55,5 @@ Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tab
 Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\ImageReader.g.cs
 Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\PlaylistTab.baml
 Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\PlaylistTab.g.cs
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\ModernDialog1.baml
+Z:\Quach On My Mac\Lab\windows\WindowMediaPlayer\WindowMediaPlayer\obj\Debug\Tabs\ModernDialog1.g.cs

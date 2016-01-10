@@ -36,7 +36,7 @@
 
         <DockPanel Grid.Row="3" Background="White">
             <DockPanel>
-                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click">
+                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click" BorderThickness="0">
                     <DynamicResource ResourceKey="Play"/>
                 </Button>
             </DockPanel>
@@ -46,8 +46,8 @@
             </DockPanel>
 
             <DockPanel LastChildFill="True">
-                <TextBlock Name="TextTimer">00:00:00</TextBlock>
-                <TextBlock x:Name="VideoFullTimer" DockPanel.Dock="Right">00:00:00</TextBlock>
+                <TextBlock Name="TextTimer" Foreground="Black">00:00:00</TextBlock>
+                <TextBlock x:Name="VideoFullTimer" DockPanel.Dock="Right" Foreground="Black">00:00:00</TextBlock>
                 <Slider Name="SliderProgress" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" ValueChanged="Slider_ValueChanged" />
             </DockPanel>
         </DockPanel>

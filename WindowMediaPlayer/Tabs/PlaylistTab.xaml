@@ -5,11 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             Unloaded="UserControl_Unloaded"
              d:DesignHeight="357.11" d:DesignWidth="569.725">
 
     <UserControl.Resources>
         <Image x:Key="Play" Source="/Resources/play.png" Width="20" Height="20"/>
         <Image x:Key="Pause" Source="/Resources/pause.png" Width="20" Height="20"/>
+        <Image x:Key="Forward" Source="/Resources/forward.png" Width="20" Height="20"/>
+        <Image x:Key="Backward" Source="/Resources/backward.png" Width="20" Height="20"/>
+        <Image x:Key="Loop" Source="/Resources/loop.png" Width="20" Height="20"/>
+        <Image x:Key="LoopActive" Source="/Resources/loop_active.png" Width="20" Height="20"/>
     </UserControl.Resources>
 
     <Grid Style="{StaticResource ContentRoot}">
@@ -25,32 +31,44 @@
         </StackPanel>
 
         <DockPanel Grid.Row="1" HorizontalAlignment="Left" Margin="0,5,0,5">
-            <DataGrid Name="All_Playlists" AutoGenerateColumns="False" MouseDoubleClick="Row_DoubleClick" BorderBrush="#666666" BorderThickness="0,0,1,0">
+            <DataGrid Name="All_Playlists" AutoGenerateColumns="False" MouseDoubleClick="Row_DoubleClick" BorderBrush="#666666" BorderThickness="0,0,1,0" IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Width="150" Header="Playlist name" Binding="{Binding}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Name="Playlist_Content" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid Name="Playlist_Content" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="Music_DoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="List of musics" Binding="{Binding SongList}" />
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" />
+                    <DataGridTextColumn Header="Album" Binding="{Binding Album}" />
+                    <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
 
         <DockPanel Grid.Row="2" Width="Auto" Background="White">
             <DockPanel>
-                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click">
+                <Button x:Name="btnBackward" Background="White" Padding="6,3" Click="btnBackward_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Backward"/>
+                </Button>
+                <Button x:Name="btnPlayPause" Background="White" Padding="6,3" Click="btnPlayPause_Click" BorderThickness="0">
                     <DynamicResource ResourceKey="Play"/>
+                </Button>
+                <Button x:Name="btnForward" Background="White" Padding="6,3" Click="btnForward_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Forward"/>
                 </Button>
             </DockPanel>
 
             <DockPanel LastChildFill="True">
                 <ProgressBar x:Name="Volume" Minimum="0" Maximum="1" Value="{Binding Volume}" Width="60"/>
+                <Button x:Name="btnLoop" Background="White" Padding="6,3" Click="btnLoop_Click" BorderThickness="0">
+                    <DynamicResource ResourceKey="Loop"/>
+                </Button>
             </DockPanel>
 
             <DockPanel LastChildFill="True">
-                <TextBlock x:Name="MusicTimer" DockPanel.Dock="Left">00:00</TextBlock>
-                <TextBlock x:Name="MusicFullDuration" DockPanel.Dock="Right">00:00</TextBlock>
+                <TextBlock x:Name="MusicTimer" DockPanel.Dock="Left" Foreground="Black">00:00</TextBlock>
+                <TextBlock x:Name="MusicFullDuration" DockPanel.Dock="Right" Foreground="Black">00:00</TextBlock>
                 <Slider x:Name="Slider_Music" Minimum="0" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" ValueChanged="Slider_ValueChanged" />
             </DockPanel>
         </DockPanel>

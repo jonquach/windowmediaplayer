@@ -29,12 +29,13 @@ namespace WindowMediaPlayer.Tabs
     public partial class MusicTab : UserControl
     {
         //private List<Music> musics = new List<Music>();
+        private Music currentSong;
         public MusicLibrary musicLibrary = new MusicLibrary();
         private MediaPlayer mediaPlayer = new MediaPlayer();
         private List<string> musicList = new List<string>();
         private bool isDragging = false;
         private TimeSpan fullDuration;
-        private int index;
+        private int index = 0;
 
         public MusicTab()
         {
@@ -70,7 +71,7 @@ namespace WindowMediaPlayer.Tabs
                     file.Close();
                 }
             }
-            catch (Exception e)
+            catch (IOException e)
             {
                 Debug.WriteLine(e.Message);
             }
@@ -87,7 +88,7 @@ namespace WindowMediaPlayer.Tabs
                 writer.Serialize(file, musicLibrary);
                 file.Close();
             }
-            catch (Exception e)
+            catch (IOException e)
             {
                 Debug.WriteLine(e.Message);
             }
@@ -117,14 +118,14 @@ namespace WindowMediaPlayer.Tabs
                 MusicFullDuration.Text = mediaPlayer.NaturalDuration.TimeSpan.ToString(@"mm\:ss");
                 fullDuration = mediaPlayer.NaturalDuration.TimeSpan;
                 Slider_Music.Maximum = mediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
-                btnPlayPause.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                btnPlayPause.Content = Resources["Pause"];
+                mediaPlayer.Play();
+                Volume.Value = mediaPlayer.Volume;
             }
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            //Debug.WriteLine(mediaPlayer.Source == null);
-            //Debug.WriteLine("isDrag " + isDragging + " timeSpan " + mediaPlayer.NaturalDuration.HasTimeSpan);
             if (isDragging == false &&
                 mediaPlayer.Source != null &&
                 mediaPlayer.NaturalDuration.HasTimeSpan)
@@ -168,12 +169,11 @@ namespace WindowMediaPlayer.Tabs
             {
                 Music music = row.Item as Music;
                 index = ((DataGrid)sender).SelectedIndex;
-
-                if (mediaPlayer.Source != null && btnPlayPause.Content == Resources["Play"])
-                    btnPlayPause.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                
                 if (File.Exists(music.PathUri.LocalPath))
                 {
                     mediaPlayer.Open(music.PathUri);
+                    currentSong = music;
                     Volume.Value = mediaPlayer.Volume;
                 }
             }
@@ -181,15 +181,39 @@ namespace WindowMediaPlayer.Tabs
 
         private void btnPlayPause_Click(object sender, RoutedEventArgs e)
         {
-            if (btnPlayPause.Content == this.Resources["Play"])
+            if (currentSong == null)
             {
-                btnPlayPause.Content = this.Resources["Pause"];
-                mediaPlayer.Play();
+                currentSong = (Music)All_Musics.SelectedItem;
+                if (currentSong != null)
+                {
+                    index = All_Musics.SelectedIndex;
+                    mediaPlayer.Open(currentSong.PathUri);
+                }
+                return;
             }
             else
             {
+                Music music = (Music)All_Musics.SelectedItem;
+                if (music != currentSong && music != null)
+                {
+                    currentSong = music;
+                    btnPlayPause.Content = this.Resources["Play"];
+                    mediaPlayer.Stop();
+                    mediaPlayer.Open(currentSong.PathUri);
+                    index = All_Musics.SelectedIndex;
+                    return;
+                }
+            }
+
+            if (btnPlayPause.Content == this.Resources["Pause"])
+            {
                 btnPlayPause.Content = this.Resources["Play"];
                 mediaPlayer.Pause();
+            }
+            else if (btnPlayPause.Content == Resources["Play"])
+            {
+                btnPlayPause.Content = this.Resources["Pause"];
+                mediaPlayer.Play();
             }
         }
 
@@ -209,8 +233,7 @@ namespace WindowMediaPlayer.Tabs
             MusicTimer.Text = TimeSpan.FromSeconds(Slider_Music.Value).ToString(@"mm\:ss");
             if (fullDuration.TotalSeconds == mediaPlayer.Position.TotalSeconds)
             {
-                Debug.WriteLine("end of music");
-                btnPlayPause.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                btnPlayPause.Content = Resources["Play"];
                 DataGridRow row = (DataGridRow)All_Musics.ItemContainerGenerator.ContainerFromIndex(index + 1);
 
                 if (row != null)
@@ -219,12 +242,24 @@ namespace WindowMediaPlayer.Tabs
 
                     ++index;
                     All_Musics.SelectedIndex = index;
+                    currentSong = next;
+                    mediaPlayer.Open(next.PathUri);
+                }
+                else if (row == null && btnLoop.Content == Resources["LoopActive"])
+                {
+                    row = (DataGridRow)All_Musics.ItemContainerGenerator.ContainerFromIndex(0);
+
+                    Music next = (Music)row.Item;
+                    index = 0;
+                    All_Musics.SelectedIndex = index;
+                    currentSong = next;
                     mediaPlayer.Open(next.PathUri);
                 }
                 else
                 {
                     All_Musics.SelectedIndex = -1;
                     mediaPlayer.Position = TimeSpan.FromSeconds(0.0);
+                    mediaPlayer.Stop();
                 }
             }
         }
@@ -259,6 +294,57 @@ namespace WindowMediaPlayer.Tabs
             this.PreviewKeyDown -= HandleKeyPress;
             this.MouseWheel -= HandleMouseWheel;
             this.Focusable = false;
+        }
+
+        private void btnBackward_Click(object sender, RoutedEventArgs e)
+        {
+            if (index == 0)
+                return;
+
+            DataGridRow row = (DataGridRow)All_Musics.ItemContainerGenerator.ContainerFromIndex(index - 1);
+
+            if (row != null)
+            {
+                Music prev = (Music)row.Item;
+
+                --index;
+                All_Musics.SelectedIndex = index;
+                currentSong = prev;
+                mediaPlayer.Open(prev.PathUri);
+            }
+            else
+            {
+                All_Musics.SelectedIndex = -1;
+                mediaPlayer.Position = TimeSpan.FromSeconds(0.0);
+            }
+        }
+
+        private void btnForward_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridRow row = (DataGridRow)All_Musics.ItemContainerGenerator.ContainerFromIndex(index + 1);
+
+            if (row != null)
+            {
+                Music prev = (Music)row.Item;
+
+                ++index;
+                All_Musics.SelectedIndex = index;
+                currentSong = prev;
+                mediaPlayer.Open(prev.PathUri);
+            }
+            else
+            {
+                All_Musics.SelectedIndex = -1;
+                mediaPlayer.Position = TimeSpan.FromSeconds(0.0);
+            }
+        }
+
+        private void btnLoop_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnLoop.Content == this.Resources["Loop"])
+                btnLoop.Content = this.Resources["LoopActive"];
+            else
+                btnLoop.Content = this.Resources["Loop"];
         }
     }
 }
